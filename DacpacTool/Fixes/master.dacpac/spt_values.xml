@@ -1,0 +1,34 @@
+﻿<!-- This block adds missing system view spt_values to master.dacpac
+				To use, copy master.dacpac to some local folder and run DacpacTool with following parameters:
+					copy "c:\Program Files(x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SQLSchemas\master.dacpac" .
+					DacpacTool.exe Add -f master.dacpac -a spt_values.xml
+		-->
+		<Element Type="SqlView" Name="[dbo].[spt_values]">
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[spt_values].[name]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[spt_values].[number]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[spt_values].[type]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[spt_values].[low]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[spt_values].[high]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[spt_values].[status]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		
