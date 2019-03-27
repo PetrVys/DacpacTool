@@ -18,7 +18,7 @@ namespace DacpacTool
             IsCommand("Filter", "Filter and change elements in a DACPAC model");
             HasRequiredOption("f|file=", "DACPAC file to modify", p => DacpacFilePath = p);
             HasOption("b|blacklist=", "Blacklist file - one regex per line. When element matches one of the lines, it will be removed from the model.", p => BlacklistFilePath = p);
-            HasOption("r|replace=", "Replace file - one regex and replacement expression per line, separated by \t. Matches will be replaced with the text after \t", p => ReplaceFilePath = p);
+            HasOption("r|replace=", "Replace file - one regex and replacement expression per line, separated by \\t. Matches will be replaced with the text after \\t", p => ReplaceFilePath = p);
         }
 
         public override int Run(string[] remainingArguments)
